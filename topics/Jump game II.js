@@ -58,31 +58,3 @@ jump([2, 3, 0, 1, 4])
 
 //2 + 1 + 1 + 4 实际上用的是 2 + 1 + 1 
 
-
-{
-
-    //for循环先失败了
-    const jump = function (nums) {
-        let count = 0;
-        if (nums.length == 1) {
-            return 0;
-        }
-        let cur = 0;
-        for (let i = 0; i < nums.length; i++) {
-            console.log('---i', i)
-            count++
-            let pre = cur;
-            let j = i;
-            for (; j <= pre; j++) {
-                nums[j] && (cur = Math.max(cur, j + nums[j]));
-                console.log(cur)
-            }
-            i += cur - 1
-        }
-        console.log(count)
-        return count
-    };
-
-    jump([2, 3, 0, 1, 4])
-
-}
