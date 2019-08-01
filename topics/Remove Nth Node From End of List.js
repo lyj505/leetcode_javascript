@@ -12,10 +12,6 @@ list.quickInit([1, 2, 3, 4, 5]);
 // list.insert('5', '4');
 
 
-// list.display();
-
-//remove
-
 /**
  * Definition for singly-linked list.
  * function ListNode(val) {
