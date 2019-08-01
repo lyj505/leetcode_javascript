@@ -24,4 +24,5 @@
   1. npm install -g conventional-changelog-cli
   2. conventional-changelog -p angular -i CHANGELOG.md -s (自动生成日志)
     可以在提交之前生成好日志 
+    
   ```
