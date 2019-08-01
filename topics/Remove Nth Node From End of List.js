@@ -1,5 +1,4 @@
 
-
 const listNode = require('./node-list');
 
 const list = new listNode.LList();
@@ -33,6 +32,7 @@ list.insert('5', '4');
 
 
 
+//wrong method
 let removeNthFromEnd = function (head, n) {
     let prevNode = findEl(head, n);
     if (!(prevNode.next == null)) {
@@ -53,13 +53,6 @@ const findEl = function (head, n) {
     }
     return currNode;
 }
-
-
-
-
-// removeNthFromEnd(list.head, 2);
-//[1,2,3,4,5] -> [1,2,3,5]
-// list.display();
 
 
 
