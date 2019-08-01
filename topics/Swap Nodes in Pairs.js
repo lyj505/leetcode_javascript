@@ -86,19 +86,19 @@ fruits.insert('3', '2');
 fruits.insert('4', '3');
 
 
-/**
- * @param {ListNode} head
- * @return {ListNode}
- */
-var swapPairs = function (head) {
-    if (!head || !head.next) return head;
-    var v1 = head, v2 = head.next, v3 = v2.next;
-    v2.next = v1;
-    v1.next = swapPairs(v3);
-    return v2;
-};
+// /** swap nodes invalid
+//  * @param {ListNode} head
+//  * @return {ListNode}
+//  */
+// var swapPairs = function (head) {
+//     if (!head || !head.next) return head;
+//     var v1 = head, v2 = head.next, v3 = v2.next;
+//     v2.next = v1;
+//     v1.next = swapPairs(v3);
+//     return v2;
+// };
 
-console.log(fruits.display());
-const a = swapPairs(fruits); //  [2,1,4,3]
-console.log(a.display());
+// console.log(fruits.display());
+// const a = swapPairs(fruits); //  [2,1,4,3]
+// // console.log(a.display());
 // console.log(fruits.display());
