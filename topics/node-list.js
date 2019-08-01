@@ -16,12 +16,13 @@ class LList {
 
 
     quickInit(nodeArray) {
+        //TODO:无重复元素是可以的,非重复元素会找到后面的一个...之后修复把
         nodeArray = ['head', ...nodeArray];
         nodeArray.some((curNode, k) => {
-            if (k == nodeArray.length) {
+            const next = nodeArray[k + 1];
+            if (k == nodeArray.length || next == null || next == undefined) {
                 return true;
             }
-            const next = nodeArray[k + 1];
             this.insert(next, curNode);
         })
     }

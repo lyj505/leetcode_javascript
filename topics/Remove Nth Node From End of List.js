@@ -2,15 +2,14 @@
 const listNode = require('./node-list');
 
 const list = new listNode.LList();
-// list.quickInit([1, 2, 3, 4, 1]);
-
+list.quickInit([1, 2, 3, 4, 5]);
 
 //head ->1 ->2 ->3 ->4
-list.insert('1', 'head');
-list.insert('2', '1');
-list.insert('3', '2');
-list.insert('4', '3');
-list.insert('5', '4');
+// list.insert('1', 'head');
+// list.insert('2', '1');
+// list.insert('3', '2');
+// list.insert('4', '3');
+// list.insert('5', '4');
 
 
 // list.display();
@@ -60,12 +59,12 @@ removeNthFromEnd = function (head, n) {
 
     //head 2
 
-                // head ---> 1 -----> 2 -----> 3 ------> 4 ------> 5
-//step1        //  current         runnner
-//step2                    current          runnner       
-//step3                             current          runnner       
-//step4                                     current          runnner 
-//                                                    remove
+    // head ---> 1 -----> 2 -----> 3 ------> 4 ------> 5
+    //step1        //  current         runnner
+    //step2                    current          runnner       
+    //step3                             current          runnner       
+    //step4                                     current          runnner 
+    //                                                    remove
 
     let current = head;
 
