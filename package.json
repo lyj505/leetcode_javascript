@@ -5,10 +5,15 @@
     "main": "index.js",
     "dependencies": {},
     "devDependencies": {
+        "@commitlint/cli": "^8.1.0",
+        "@commitlint/config-conventional": "^8.1.0",
         "cz-conventional-changelog": "^3.0.2",
         "validate-commit-msg": "^2.14.0"
     },
     "scripts": {
+        "commit": "git-cz",
+        "commitmsg": "opt --in commitmsg --exec \"node ./lib/cli.js\"",
+        "precommit": "opt --in precommit --exec \"npm run validate\"",
         "test": "echo \"Error: no test specified\" && exit 1",
         "log": "conventional-changelog -p angular -i CHANGELOG.md -s"
     },
@@ -26,23 +31,7 @@
     "config": {
         "commitizen": {
             "path": "./node_modules/cz-conventional-changelog"
-        },
-        "validate-commit-msg": {
-            "helpMessage": "\nPlease fix your commit message (and consider using http://npm.im/commitizen)\n",
-            "types": [
-                "feat",
-                "fix",
-                "docs",
-                "style",
-                "refactor",
-                "perf",
-                "test",
-                "chore",
-                "revert",
-                "custom"
-            ],
-            "warnOnFail": false,
-            "autoFix": true
         }
-    }
+    },
+
 }
