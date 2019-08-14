@@ -1,0 +1,9 @@
+{
+  "skipCI": false,
+   "hooks": 
+   {
+        "pre-commit": "npm test",
+        "pre-push": "echo ...push",
+        "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+}
