@@ -3,11 +3,12 @@
     "version": "1.0.0",
     "description": "* 23/05/2019 14:53",
     "main": "index.js",
-    "dependencies": {},
+    "dependencies": {
+        "cz-conventional-changelog": "^3.0.2"
+    },
     "devDependencies": {
         "@commitlint/cli": "^8.1.0",
         "@commitlint/config-conventional": "^8.1.0",
-        "cz-conventional-changelog": "^3.0.2",
         "husky": "^3.0.3",
         "validate-commit-msg": "^2.14.0"
     },
@@ -15,7 +16,7 @@
         "commit": "git-cz",
         "commitmsg": "opt --in commitmsg --exec \"node ./lib/cli.js\"",
         "precommit": "opt --in precommit --exec \"npm run validate\"",
-        "test": "echo 1",
+        "test": "echo now time commit.....",
         "log": "conventional-changelog -p angular -i CHANGELOG.md -s"
     },
     "repository": {
@@ -29,6 +30,11 @@
         "url": "https://github.com/lyj505/leetcode_javascript/issues"
     },
     "homepage": "https://github.com/lyj505/leetcode_javascript#readme",
+    "config": {
+        "commitizen": {
+            "path": "node_modules/cz-conventional-changelog"
+        }
+    },
     "husky": {
         "hooks": {
             "pre-commit": "npm test",
