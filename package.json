@@ -13,9 +13,6 @@
         "validate-commit-msg": "^2.14.0"
     },
     "scripts": {
-        "commit": "git-cz",
-        "commitmsg": "opt --in commitmsg --exec \"node ./lib/cli.js\"",
-        "precommit": "opt --in precommit --exec \"npm run validate\"",
         "test": "echo now time commit.....",
         "log": "conventional-changelog -p angular -i CHANGELOG.md -s"
     },
