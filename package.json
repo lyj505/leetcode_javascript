@@ -8,13 +8,14 @@
         "@commitlint/cli": "^8.1.0",
         "@commitlint/config-conventional": "^8.1.0",
         "cz-conventional-changelog": "^3.0.2",
+        "husky": "^3.0.3",
         "validate-commit-msg": "^2.14.0"
     },
     "scripts": {
         "commit": "git-cz",
         "commitmsg": "opt --in commitmsg --exec \"node ./lib/cli.js\"",
         "precommit": "opt --in precommit --exec \"npm run validate\"",
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "test": "echo 1",
         "log": "conventional-changelog -p angular -i CHANGELOG.md -s"
     },
     "repository": {
@@ -28,10 +29,11 @@
         "url": "https://github.com/lyj505/leetcode_javascript/issues"
     },
     "homepage": "https://github.com/lyj505/leetcode_javascript#readme",
-    "config": {
-        "commitizen": {
-            "path": "./node_modules/cz-conventional-changelog"
+    "husky": {
+        "hooks": {
+            "pre-commit": "npm test",
+            "pre-push": "echo ...push",
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
         }
-    },
-
+    }
 }
