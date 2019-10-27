@@ -18,8 +18,100 @@
 
 /**
  * @param {number[]} nums
- * @return {boolean}
+ * @return {boolean} 30行
  */
 var canJump = function (nums) {
-   //fuck
+  let canJumpFlag = true;
+  for (let step = 0; step < nums.length; step++) {
+    const currentVal = nums[step];
+    if (currentVal === 0) {
+      if (nums[step + 1] != undefined && nums[step + 1] == 0) {
+        continue;
+      }
+      canJumpFlag = false;
+      const isLast = (step == nums.length - 1);
+      let isBeforeCanJump = nums[step - 1] === undefined;
+      for (let j = step - 1; j >= 0; j--) {
+        if (step - j < nums[j] || (isLast && step - j == nums[j])) {
+          canJumpFlag = true;
+          break;
+        }
+      }
+      if (isBeforeCanJump && isLast) {
+        canJumpFlag = true;
+        break;
+      }
+      if (!canJumpFlag) {
+        canJumpFlag = false;
+        break;
+      }
+    } else {
+      step += (currentVal - 1)
+    }
+  }
+  return canJumpFlag;
+};
+
+canJump([0]);
+// Output: true
+// Explanation: Jum])
+
+
+//分析：
+
+//1.首先跳过0的数字
+//2.如果跳到最后一个为0,则也可以过。
+//3.如果有连续0,必须跳过最后一个0。
+
+//[0]
+//[2,0,0]
+//[2,1,0,0]
+
+//46行 未优化前
+var canJump = function (nums) {
+  let canJumpFlag = true;
+  for (let step = 0; step < nums.length; step++) {
+    const currentVal = nums[step];
+    if (currentVal === 0) {
+      if (nums[step + 1] != undefined && nums[step + 1] == 0) {
+        continue;
+      }
+      canJumpFlag = false;
+      let innerCanJumpLoop = 0;
+      const isLast = (step == nums.length - 1);
+      let innerCanJump = false;
+      for (let j = step - 1; j >= 0; j--) {
+        innerCanJumpLoop++;
+        if (isLast) {
+          if (step - j <= nums[j]) {
+            canJumpFlag = true;
+            innerCanJump = true;
+            break;
+          } else {
+            canJumpFlag = false;
+          }
+        } else {
+          if (step - j < nums[j]) {
+            canJumpFlag = true;
+            innerCanJump = true;
+            break;
+          } else {
+            canJumpFlag = false;
+          }
+        }
+      }
+      if (innerCanJumpLoop == 0 && step == nums.length - 1) {
+        canJumpFlag = true;
+        break;
+      } else {
+        if (!innerCanJump) {
+          canJumpFlag = false;
+          break;
+        }
+      }
+    } else {
+      step += (currentVal - 1)
+    }
+  }
+  return canJumpFlag;
 };
