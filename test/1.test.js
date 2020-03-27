@@ -7,27 +7,29 @@ const testList = [
     }, {
         origin: 'bb',
         expect: 'bb',
-    }, {
-        origin: 'babad',
-        expect: 'aba',
-    }, {
-        origin: 'cbbd',
-        expect: 'bb',
     },
-    {
-        origin: 'abb',
-        expect: 'bb'
-    },
+    // {
+    //     origin: 'babad',
+    //     expect: 'aba',
+    // },
+    // {
+    //     origin: 'cbbd',
+    //     expect: 'bb',
+    // },
+    // {
+    //     origin: 'abb',
+    //     expect: 'bb'
+    // },
 
-    {
-        origin: 'ac',
-        expect: 'a'
-    },
+    // {
+    //     origin: 'ac',
+    //     expect: 'a'
+    // },
 
-    {
-        origin: "ccd",
-        expect: 'cc'
-    },
+    // {
+    //     origin: "ccd",
+    //     expect: 'cc'
+    // },
     //  {
     //     origin: "adam",
     //     expect: 'ada'
